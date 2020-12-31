@@ -1,9 +1,9 @@
 <table style="text-align:justify;">
-  <tr>
+  <tr style="background-color: white">
     <th>References</th>
     <th>Contributors list</th>
   </tr>
-  <tr>
+  <tr style="background-color: white">
     <td>
     <li>P.N Modi and S.M.Seth, “Hydraulics and Fluid Mechanics”, Standard Book House, Delhi, 2010.</li>
     <li>K. Subramanya, “Hydraulic Machinery”, Tata McGraw-Hill Education, 2013.</li>
