@@ -1,0 +1,44 @@
+[{
+	"question": "Kaplan Turbine is preferred a head range of __",
+	"answers": {
+		"a": "0-25m",
+		"b": "25-100m",
+		"c": "50-200m",
+		"d": "0-100m"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "A Kaplan Turbine is preferred for a specific speed of 300 to 1000 r.p.m: (Say Yes/No)",
+	"answers": {
+		"a": "Yes",
+		"b": "No"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "Guide angle as per the aerofoil theory of Kaplan Turbine blade design is defined as the angle between",
+	"answers": {
+		"a": "Lift and resultant force",
+		"b": "Drag and resultant force",
+		"c": "Lift and tangential force",
+		"d": "Resultant force and tangential force"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "In a hydro-electric plant a conduct system for taking water from the intake works to the turbine is known as",
+	"answers": {
+		"a": "Dam",
+		"b": "Reservoir",
+		"c": "Penstocky",
+		"d": "Surge tank"
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "A propeller turbine which has adjustable blade is called as",
+	"answers": {
+		"a": "Banki turbine",
+		"b": "Pelton turbine",
+		"c": "Kaplan turbine",
+		"d": "Francis-Pelton turbine"
+	},
+	"correctAnswer": "c"
+}]
