@@ -33,14 +33,14 @@
 		"c": "Pelton wheel",
 		"d": "Jonual turbine"
 	},
-	"correctAnswer": "c"
+	"correctAnswer": "a"
 }, {
 	"question": "What is the range of Flow ratio for a Kaplan turbine for its most efficient operation?",
 	"answers": {
-		"a": "0.50 to 0.80",
-		"b": "0.65 to 0.95",
-		"c": "0.90 to 1.40",
-		"d": "0.35 to 0.75"
+	"a": "0.50 to 0.80",
+	"b": "0.65 to 0.95",
+	"c": "0.90 to 1.40",
+	"d": "0.35 to 0.75"
 	},
 	"correctAnswer": "d"
 }]
