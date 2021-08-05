@@ -19,9 +19,9 @@ c. V<sub>f1</sub> < V<sub>f2</sub><br>
 d. V<sub>f1</sub> = Zero, V<sub>f2</sub> = Maximum<br><br>
 
 Q 4. For low head and high discharge, the hydraulic turbine used is<br>
-a. Kaplan turbine<br>
+<b>a. Kaplan turbine</b><br>
 b. Francis turbine<br>
-<b>c. Pelton wheel</b><br>
+c. Pelton wheel<br>
 d. Jonual turbine<br><br>
 
 Q 5. What is the range of Flow ratio for a Kaplan turbine for its most efficient operation?<br>
