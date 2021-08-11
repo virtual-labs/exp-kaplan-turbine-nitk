@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+
+<title>SOLVE</title>
+<link rel="stylesheet" href="css/kpln.css" />
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/kpln.js"></script>
+
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src= "js/ej.web.all.js"></script>
+<!--Stylesheet to display Math functions -->
+<link href="css/mathstyle.css" rel="stylesheet" />
+
+<script>
+var simsubscreennum=0;
+var temp=0;
+var lnt=0;
+var values=[
+			[
+			[2775,5.42,20.05,14.63,0.0466,1,0,1.4715,2285.73,427.4,1241.02,0.0208,38.2278,18.699],
+			[2725,5.42,19.8,14.38,0.0454,2,0.6,2.0601,2226.87,587.57,1218.66,0.0203,52.5539,26.385],
+			[2660,5.42,19.4,13.98,0.0435,3,1,2.943,2133.68,819.37,1189.59,0.0195,73.2867,38.402],
+			[2575,5.42,19,13.58,0.0417,4,1.2,4.1202,2045.39,1110.46,1151.58,0.0186,99.3226,54.291],
+			],
+
+			[
+			[2760,5.2,19.95,14.75,0.0472,1,0,1.4715,2546.68,425.09,1176.87,0.0201,32.9562,16.692],
+			[2710,5.2,19.6,14.4,0.0455,2,0.5,2.20725,2454.95,626.08,1155.55,0.0194,48.5384,25.503],
+			[2625,5.2,19.3,14.1,0.0441,3,0.9,3.09015,2379.42,849.02,1119.3,0.0188,65.8224,35.682],
+			[2525,5.2,19.1,13.9,0.0432,4,1.2,4.1202,2330.86,1088.9,1076.66,0.0184,84.4197,46.717],
+			],
+
+			[
+			[2750,5.2,20,14.8,0.0474,1,0.1,1.32435,2789.96,381.19,1122.68,0.0194,25.9367,13.663],
+			[2670,5.2,19.6,14.4,0.0455,2,0.6,2.0601,2678.13,575.72,1090.02,0.0186,39.1728,21.497],
+			[2560,5.2,19.4,14.2,0.0446,3,1,2.943,2625.16,788.57,1045.12,0.0182,53.6554,30.039],
+			[2480,5.2,19.2,14,0.0436,4,1.3,3.97305,2566.3,1031.3,1012.46,0.0178,70.1711,40.186],
+			],
+
+			[
+			[2735,5.1,20.1,15,0.0484,1,0.1,1.32435,3086.23,379.11,1072.76,0.019,22.8768,12.284],
+			[2645,5.1,19.7,14.6,0.0465,2,0.5,2.20725,2965.07,611.06,1037.45,0.0182,36.8735,20.609],
+			[2540,5.1,19.4,14.3,0.045,3,1.1,2.79585,2869.43,743.29,996.27,0.0177,44.8527,25.904],
+			[2430,5.1,19.1,14,0.0436,4,1.4,3.8259,2780.15,973.08,953.12,0.0171,58.719,35.001],
+			],
+
+			[
+			[2690,5.1,19.9,14.8,0.0474,1,0.2,1.1772,3254.96,331.44,1016.72,0.0179,17.8961,10.183],
+			[2580,5.1,19.6,14.5,0.046,2,0.5,2.20725,3158.82,596.05,975.15,0.0174,32.1837,18.869],
+			[2480,5.1,19.2,14.1,0.0441,3,1.2,2.6487,3028.35,687.53,937.35,0.0167,37.1231,22.703],
+			[2320,5.1,19,13.9,0.0432,4,1.5,3.67875,2966.54,893.3,876.88,0.0163,48.2337,30.113],
+			],
+
+			[
+			[2253,5.1,20.7,15.6,0.0513,1,0.2,1.1772,3774.4,277.6,822.68,0.0187,13.5154,7.355],
+			[2137,5.1,20.4,15.3,0.0498,2,0.7,1.91295,3664.04,427.87,780.32,0.0182,20.8315,11.678],
+			[2035,5.1,20,14.9,0.0479,3,1.1,2.79585,3524.24,595.51,743.08,0.0175,28.9933,16.898],
+			[1934,5.1,19.5,14.4,0.0455,4,1.3,3.97305,3347.66,804.25,706.2,0.0166,39.1561,24.024],
+			]
+
+			]
+
+
+</script>
+</head>
+
+
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h4>Performance Characteristics of Kaplan Turbine</h4></div>
+
+<!--SubScreen Home	-->
+<div class="simsubscreen" id="canvas0">
+<h4 class="incanvas" >Objective</h4>
+<p class="incanvas" >To conduct the performance test on kaplan turbine under constant head and to plot the operating characteristics.</p>
+<h4 class="incanvas" >Apparatus used:</h4>
+<p class="incanvas" >Kaplan Turbine Setup with Centrifugal Pump, Spring Balance with Weights, etc.</p>
+<img id="" style="position: absolute; left: 30px; top: 130px;" src="images/1.png"/>
+<br>&nbsp;<span class="tooltip" style="border-bottom:1px dotted ; color:red;text-align:justify">Description
+	<span class="tooltiptext">
+		<strong style="color:red">Impulse turbine</strong>: is a turbine that is driven by high velocity jets of water or steam from a nozzle directed on to vanes or buckets attached to a wheel.<br><br>
+		<strong style="color:red">Reaction turbine</strong>: is a type of turbine that develops torque by reacting to the pressure or weight of a fluid.<br><br>
+		<strong style="color:red">Axial turbine</strong>: is a turbine in which the flow of the working fluid is parallel to the shaft, as opposed to radial turbines, where the fluid runs around a shaft, as in a watermill.<br><br>
+		<strong style="color:red">Input Power</strong>: is the power, which is required by the appliance at its input i.e., from the plug point.<br><br>
+		<strong style="color:red">Unit Power</strong>: The power dissipated by a current of 1 ampere flowing across a resistance of 1 ohm. kW, kilowatt. a unit of power equal to 1000 watts.<br><br>
+		<strong style="color:red">Unit Discharge</strong>: is defined as the discharge passing through a turbine, which is working under a unit head<br>
+	</span>
+	</span>
+</div>
+
+
+
+
+<!--Step1	-->
+
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP </strong><span class="circlebg" id="stepnumber" >&nbsp;1&nbsp;</span><p id="pumptext" class="steptext"> Start the pump by pressing the start button and select the head.</p>
+<img id="can1-1" style="position: absolute; left: 10px; top: 130px;" src="images/1.1.png"/>
+<img id="can1-2" style="position: absolute; left: 600px; top: 125px;" src="images/board.png"/>
+<img id="can1on" style="position: absolute; left: 635px; top: 160px;" src="images/on.png"/>
+<img id="can1off" style="position: absolute; left: 635px; top: 185px;" src="images/off.png"/>
+<img id="onarm" src="images/hand.png" style="position:absolute;"/>
+
+<form name="can1-form" id="can1-form"style="position:absolute;top: 320px; left:500px;  visibility:hidden;">
+<label>Select the head </label>&nbsp;&nbsp;
+  <select name="can1-select" id="can1-select">
+    <option value="5">5</option>
+	<option value="5.5">5.5</option>
+	<option value="6">6</option>
+	<option value="6.5">6.5</option>
+	<option value="7">7</option>
+	<option value="7.5">7.5</option>
+
+
+  </select>
+  <label>&nbsp;&nbsp;m</label>
+  <br><br>
+  <button type="button" id="can1-ok">OK</button>
+</form>
+
+</div>
+
+<!--Step2	-->
+<div class="simsubscreen" id="canvas2" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP &nbsp;</strong><span class="circlebg" id="stepnumber" >&nbsp;2&nbsp;</span><p id="pumptext-2" class="steptext">&nbsp;Set the head of water to be constant by rotating the inlet valve.</p>
+<img id="can2-1" style="position: absolute; left: 10px; top: 130px;" src="images/1.1.png"/>
+
+<img id="can2-3" style="position: absolute; left: 570px; top: 120px;" src="images/inlet valve1.png"/>
+<img id="can2-2" style="position: absolute; left: 545px; top: 135px;" src="images/i-valve.png"/>
+<img id="can2-5" style="position: absolute; left: 355px; top: 235px;" src="images/delivery head.png"/>
+<img id="can2-6" style="position: absolute; left: 430px; top: 325px;" src="images/arrow.png"/>
+
+<p id="can2-4" style="position:absolute;top: 470px; left:370px"> Constant head (H)= </p>
+
+
+</div>
+
+<!--Step3	-->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden">
+<strong class="incanvas" >STEP &nbsp;</strong><span class="circlebg">&nbsp;3&nbsp;</span><p class="steptext">&nbsp;Apply the weight on the pan and note the torque reading.</p>
+<img id="can3-1" style="position: absolute; left: 10px; top: 130px;" src="images/1.1.png"/>
+<img id="can3-2" style="position: absolute; left: 510px; top: 170px;" src="images/2.png"/>
+<img id="can3-3" style="position: absolute; left: 450px; top: 225px;" src="images/2.1.png"/>
+<p id="can3-7" style="position:absolute;top: 340px; left:370px"> Radius of brake drum (R)= 0.15 m  </p>
+<p id="can3-4" style="position:absolute;top: 370px; left:370px"> Dead weight of the pan = </p>
+<p id="can3-5" style="position:absolute;top: 400px; left:370px"> Spring balance reading = </p>
+<!-- <p id="can3-6" style="position:absolute;top: 430px; left:370px"> Torque, T = </p> -->
+<div class="formulaTooltip" style="position:absolute;top:430px; left:370px">
+    <p id="can3-6" style="font-family:verdana;font-size:14px;">Torque, T =</p>
+    <span class="formulaTooltipText" style="width: 250px">&tau; (N-m) = (W - S) &times; R &times; g</span>
+</div>
+</div>
+
+
+<!--Step4	-->
+
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+<strong class="incanvas" >STEP &nbsp;</strong><span class="circlebg">&nbsp;4&nbsp;</span><p class="steptext-2">&nbsp;Note the speed of the motor by inserting the tachometer.</p>
+<img id="can4-1" style="position: absolute; left: 10px; top: 130px;" src="images/1.1.png"/>
+<img id="can4-2" style="position: absolute; left: 400px; top: 225px;" src="images/2.png"/>
+<img id="can4-3" style="position: absolute; left: 586px; top: 205px;" src="images/4.3.png"/>
+<p id="can4-4" style="position:absolute;top: 430px; left:370px"> Speed (N) = </p>
+</div>
+
+
+<!--Step5	-->
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+<strong class="incanvas" >STEP &nbsp;</strong><span class="circlebg">&nbsp;5&nbsp;</span><p class="steptext">&nbsp;Note the Rectangular notch reading to find the discharge.</p>
+<img id="can5-1" style="position: absolute; left: 50px; top: 125px;" src="images/stp4.png"/>
+<img id="can5-5" style="position: absolute; left: 250px; top: 355px;" src="images/coverblue.png"/>
+<img id="can5-13" style="position: absolute; left: 250px; top: 375px;" src="images/coverblue.png"/>
+<img id="can5-2" style="position: absolute; left: 250px; top: 195px;" src="images/hookgauge4.png"/>
+
+<img id="can5-3" style="position: absolute; left: 295px; top: 109px;" src="images/hookgauge2.png"/>
+
+<img id="can5-4" style="position: absolute; left: 250px; top: 45px;" src="images/cover2.png"/>
+
+<img id="can5-6" style="position: absolute; left: 250px; top: 375px;" src="images/cover.png"/>
+<img id="can5-7" style="position: absolute; left: 119px; top: 185px;cursor:crosshair;" src="images/nob.png"/>
+<p id="can5-9" style="position:absolute;top: 260px; left:370px"> Initial reading (water level till crest) = 2.6 cm</p>
+<p id="can5-10" style="position:absolute;top: 290px; left:370px"> Final reading = </p>
+<p id="can5-11" style="position:absolute;top: 320px; left:370px"> Head of water (h) =  </p>
+<!-- <p id="can5-12" style="position:absolute;top:350px; left:370px"> Actual discharge, Q<sub>act</sub> =  </p> -->
+<div class="formulaTooltip" style="position:absolute;top:350px; left:370px">
+    <p id="can5-12" style="font-family:verdana;font-size:14px;">Actual discharge, Q<sub>act</sub> =  </p>
+    <span class="formulaTooltipText" style="width: 330px">Q<sub>act</sub> (m<sup>3</sup>/sec) = <span class="frac"><sup>2</sup><span>&frasl;</span><sub>3</sub></span>&times;C<sub>d</sub>&times; L &times; &radic;(2g) &times; H<sup>(3/2)</sup></span>
+</div>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 70px">Variables in Calculation
+	<span class="tooltiptext">
+		<span><strong style="color: red"><span>Q<sub>act</sub> (m<sup>3</sup>/sec)</strong> = <span class="frac"><sup>2</sup><span>&frasl;</span><sub>3</sub></span>&times;C<sub>d</sub>&times; L &times; &radic;(2g) &times; H<sup>(3/2)</sup></span></br>
+		<ol>
+			<li>C<sub>d</sub>: Co-efficient of discharge: 0.6 </li>
+			<li>L: Length of the wire = 0.47m</li>
+			<li>H: Head over the rectangular notch</li>
+		</ol>
+	</span>
+	</span>
+</div>
+
+<!--Step6	-->
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+<strong class="incanvas" style="position:absolute;top: 30px; left:50px" ><h2>Observation</h2></strong>
+<p id="can6-1" style="position:absolute;top: 80px; left:220px">Specific Weight of water  (&gamma;) = 9810N/m<sup>3</sup></p>
+<p id="can6-2" style="position:absolute;top: 110px; left:220px">Constant Head (H) =  </p>
+<p id="can6-3" style="position:absolute;top: 140px; left:220px"> Actual discharge, Q<sub>act</sub> = </p>
+<p id="can6-4" style="position:absolute;top: 170px; left:220px"> Speed of motor (N) =  </p>
+<p id="can6-4a" style="position:absolute;top: 200px; left:220px"> Torque (&tau;) =  </p>
+
+<strong class="incanvas" style="position:absolute;top: 250px; left:50px" ><h2>Result</h2></strong>
+<div class="formulaTooltip" style="position:absolute;top: 300px; left:220px">
+    <p id="can6-5" style="font-family:verdana;font-size:14px;">Input power =  </p>
+    <span class="formulaTooltipText" style="width: 250px">Input Power (W) = &gamma; &times; Q<sub>act</sub> &times; H </span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 330px; left:220px">
+    <p id="can6-6" style="font-family:verdana;font-size:14px;">Output power =  </p>
+    <span class="formulaTooltipText" style="width:320px">Output Power (W) = <span class="frac"><sup>(2 &times; &pi; &times; N &times; &tau;)</sup><span>&frasl;</span><sub>60</sub></span></span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 360px; left:220px">
+    <p id="can6-7" style="font-family:verdana;font-size:14px;">Efficiency =  </p>
+    <span class="formulaTooltipText" style="width: 300px">Efficiency (%) = <span class="frac"><sup>Output Power</sup><span>&frasl;</span><sub>Input Power</sub></span>&times; 100 </span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 390px; left:220px">
+    <p id="can6-8" style="font-family:verdana;font-size:14px;">Unit power =   </p>
+    <span class="formulaTooltipText" style="width: 250px">Unit power (W) = <span class="frac"><sup>Output Power</sup><span>&frasl;</span><sub>(H<sup>3/2</sup>)</sub></span></span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 420px; left:220px">
+    <p id="can6-9" style="font-family:verdana;font-size:14px;">Unit speed =    </p>
+    <span class="formulaTooltipText" style="width: 250px">Unit speed (rpm) = <span class="frac"><sup>N</sup><span>&frasl;</span><sub>&radic;H </sub></span></span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 450px; left:220px">
+    <p id="can6-10" style="font-family:verdana;font-size:14px;">Unit discharge =  </p>
+    <span class="formulaTooltipText" style="width: 250px">Unit discharge (m<sup>3</sup>/sec)  = <span class="frac"><sup>Q<sub>act</sub></sup><span>&frasl;</span><sub>&radic;H </sub></span> </span>
+</div>
+
+<!-- <p id="can6-5" style="position:absolute;top: 300px; left:220px"> Input power =  </p> -->
+<!-- <p id="can6-6" style="position:absolute;top: 330px; left:220px"> Output power =  </p> -->
+<!-- <p id="can6-7" style="position:absolute;top: 360px; left:220px"> Efficiency =   </p> -->
+<!-- <p id="can6-8" style="position:absolute;top: 390px; left:220px"> Unit power =   </p> -->
+<!-- <p id="can6-9" style="position:absolute;top: 420px; left:220px"> Unit speed =   </p> -->
+<!-- <p id="can6-10" style="position:absolute;top: 450px; left:220px"> Unit discharge =   </p> -->
+
+</div>
+
+
+
+<!--Step7	-->
+<div class="simsubscreen" id="canvas7" style="visibility:hidden">
+<center><h2>Characteristic Curves<h2></center></p>
+<span class="highlight" id="step7text1" style="border: 3px outset; position:absolute;top:60px; left:20px;cursor:pointer;">&nbsp;&nbsp;Unit Power vs Unit Speed&nbsp;&nbsp;</span>
+<span class="highlight" id="step7text2" style="border: 3px outset; position:absolute;top: 60px; left:245px;cursor:pointer;">&nbsp;&nbsp;Efficiency vs Unit Speed&nbsp;&nbsp;</span>
+<span class="highlight" id="step7text3" style="border: 3px outset; position:absolute;top: 60px; left:460px;cursor:pointer;">&nbsp;&nbsp;Unit Discharge vs Unit Speed&nbsp;&nbsp;</span>
+<div id="chartContainer" style="height: 420px; width: 600px;margin-left:25px;margin-right:100px;margin-top:50px"></div>
+
+</div>
+
+<!-- formula display -->
+<div id="">
+<span id="formula" style = "background-color:black;color:white;visibility:hidden"></span>
+</div>
+
+<!--next  Arrow	-->
+<div id="nav">
+	<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+</div>
+
+<!--Trial text	-->
+<div id="">
+<p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;"><strong>Trial = </strong></p>
+</div>
+
+
+
+<!-- This is the questions division -->
+<span id="question-div">
+	 <p id="divq" style="font-family:verdana; font-size:14px;">Both ends of the pipe must be trimmed to ensure parallel faces.</p>
+	 <!-- <input type="button" style="cursor:pointer" value="OK" onclick = "evaluateAnswer();"> -->
+	 <p id="ans"></p>
+</span>
+
+
+<!--Blinking Arrow	-->
+<img class ="" id="arrow1" style="visibility:hidden" src="images/arrow1.png"/>
+
+<div id="copyright"> &copy; 2015 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+</div>
+<!-- Mathjax -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async>
+</script>
+<script src="../assets/js/iframeResize.js"></script></body>
+</html>
